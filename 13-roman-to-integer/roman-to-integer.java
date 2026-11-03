@@ -2,9 +2,10 @@ class Solution {
     public int romanToInt(String s) {
 
         int total = 0, prev = 0;
-        
+
         for(int i = s.length()-1; i >= 0; i--)
         {
+           
             int current = switch(s.charAt(i))
             {
                 case 'I' -> 1;
@@ -17,14 +18,14 @@ class Solution {
                 default -> 0;
             };
 
-            if(current < prev) // 1 <  1
+            if(current < prev)
             {
                 total -= current;
             }
             else
             {
-                total += current; // 1 + 1 = 2 + 1 = 3
-                prev = current; //  1
+                total += current;
+                prev = current;
             }
         }
         return total;
