@@ -9,9 +9,10 @@ class Solution {
         
         for (int i = 2; i < n; i++) {
            
-            if (nums[i] != nums[index - 2]) {
+           if(nums[i] != nums[index-2])
+           {
                 nums[index++] = nums[i];
-            }
+           }
         }
         
         return index; 
