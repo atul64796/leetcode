@@ -1,25 +1,27 @@
 class MinStack {
+
     Stack<Integer> st;
-    Stack<Integer> minSt;
-    
+    Stack<Integer> minst;
+
     public MinStack() {
         st = new Stack<>();
-        minSt = new Stack<>();
+        minst = new Stack<>();
     }
     
     public void push(int value) {
         st.push(value);
 
-        if(minSt.isEmpty() || value <= minSt.peek()) //5 <= 10
+        if(minst.isEmpty() || value <= minst.peek() )
         {
-            minSt.push(value);
+            
+            minst.push(value);
         }
     }
     
     public void pop() {
-        if(st.peek().equals(minSt.peek()))
+        if(st.peek().equals(minst.peek()))
         {
-            minSt.pop();
+            minst.pop();
         }
         st.pop();
     }
@@ -29,7 +31,7 @@ class MinStack {
     }
     
     public int getMin() {
-        return minSt.peek();
+        return minst.peek();
     }
 }
 
@@ -41,3 +43,5 @@ class MinStack {
  * int param_3 = obj.top();
  * int param_4 = obj.getMin();
  */
+
+ 
